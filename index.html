@@ -1,18 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather App</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <div class="main-container">
-        <input type="search" id="city-search">
-        <button class="search-button" onclick="getData()">Search</button>
-    </div>
-    
+    <main>
+        <div class="titel-info">
+            <h1 class="titel-main">Weather in <span id="city-name">Amsterdam</span></h1>
+            <p class="subtitel">It is a <span id="weahter-info">cloudy</span> day</p>
+
+        </div>
+        <div class="main-container-info">
+            <div class="weather-card-today">
+                <h2 class="weather-card-titel">Today's weather</h2>
+                <ul class="details-list">
+                    <li>
+                        <span class="value" id="degree">23</span>
+                        <span class="icon">℃</span>
+                    </li>
+                    <li>
+                        <img src="" id="descrip-icon">
+                        <span class="value" id="descrip">Cloudy</span>
+                    </li>
+                    <li>
+                        <span class="icon">℃</span>
+                        <span class="label">feel temp</span>
+                        <span class="value" id="feel-temp">23</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="weather-card-details">
+                <h2 class="weather-card-titel">Details</h2>
+                <ul class="details-list">
+                    <li>
+                        <span class="icon">💧</span>
+                        <span class="label">Humidity</span>
+                        <span class="value"><span id="humidity">0</span>%</span>
+                    </li>
+                    <li>
+                        <span class="icon">🌊</span>
+                        <span class="label">Sea Level</span>
+                        <span class="value"><span id="humidity">1200</span>m</span>
+                    </li>
+                    <li>
+                        <span class="icon">💨 </span>
+                        <span class="label">Wind Speed</span>
+                        <span class="value"><span id="humidity">12</span> km/h</span>
+                    </li>
+                </ul>
+
+            </div>
+            <div class="weather-card-sun">
+                <h2 class="weather-card-titel">Sunrise</h2>
+                <span class="icon">🌅</span>
+                <span class="value" id="sunrise">4:00</span>
+            </div>
+            <div class="weather-card-sun">
+                <h2 class="weather-card-titel">Sunset</h2>
+                <span class="icon">🌇</span>
+                <span class="value" id="sunset">22:00</span>
+            </div>
+            <div class="search-container">
+                <input type="search" id="city-search">
+                <button class="search-button" onclick="getData()">Search</button>
+            </div>
+
+
+        </div>
+    </main>
+
 
     <script src="script.js"></script>
 </body>
+
 </html>
