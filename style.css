@@ -1,0 +1,32 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding:0;
+}
+
+main{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap:20px
+}
+
+.main-container-info{
+    display: flex;
+}
+
+.weather-card-today{
+    padding: 70px;
+    width:100%;
+    max-width: 230px;
+    border-radius: 20px;
+}
+
+.weather-card-details{
+    border-radius:20px;
+
+}
+
+.weather-card-today{
+    background-color: aquamarine;
+}
