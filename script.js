@@ -25,17 +25,25 @@ async function getData() {
 
 function showForecast(forecast) {
     const forecastDisplay = document.getElementById("forecast-container");
-    const forecastTime = forecast.list.filter(item => item.dt_txt.includes("15:00:00"));
-    console.log(forecastTime)
-    forecastTime.map(item => {
+    const forecastDataFiltert = forecast.list.filter(item => item.dt_txt.includes("15:00:00"));
+    console.log(forecastDataFiltert)
+    
+    forecastDataFiltert.map(item => {
         const day = new Date(item.dt_txt).toLocaleDateString("en-EN", { weekday: "short" })
         console.log(day)
+
+        const forecastTemps = Math.round(item.main.temp);
+        console.log(forecastTemps)
+
+        const forecastIcon = item.weather[0].icon
+        const iconurl = `http://openweathermap.org/img/w/${forecastIcon}.png`;
+        console.log(forecastIcon)
 
         forecastDisplay.innerHTML += `
           <div class="day-card">
                 <span class="label">${day}</span>
-                <span class="icon">☀️</span>
-                <span class="value">23℃</span>
+                <img class="icon" src="${iconurl}"></img>
+                <span class="value">${forecastTemps}℃</span>
            </div>
     `
     })
