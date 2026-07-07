@@ -1,32 +1,81 @@
-*{
+* {
     box-sizing: border-box;
     margin: 0;
-    padding:0;
+    padding: 0;
 }
 
-main{
+body {
+    font-family: sans-serif;
+    padding: 20px;
+}
+
+main {
     display: flex;
     justify-content: center;
     flex-direction: column;
-    gap:20px
+    gap: 20px;
+    max-width: 800px; 
+    margin: 0 auto;
 }
 
-.main-container-info{
+
+.main-container-info {
     display: flex;
+    flex-direction: column; 
+    gap: 20px; 
 }
 
-.weather-card-today{
-    padding: 70px;
-    width:100%;
-    max-width: 230px;
+
+.top-div {
+    display: flex;
+    gap: 20px; 
+    width: 100%;
+}
+
+
+.bottom-div {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+}
+
+
+.weather-card-today, 
+.forecast-card, 
+.weather-card-details {
+    flex: 1;  
     border-radius: 20px;
+    background-color: #f5f5f5; 
 }
 
-.weather-card-details{
-    border-radius:20px;
 
-}
-
-.weather-card-today{
+.weather-card-today {
     background-color: aquamarine;
+    padding:70px;
+    max-width: 230px;
+}
+
+.forecast-card{
+    padding:20px;
+}
+
+.forecast-grid{
+    display:flex;
+}
+
+.day-card{
+    display: flex;
+    flex-direction: column;
+    margin:20px;
+}
+.weather-card-sun {
+    padding: 20px;
+    background-color: #e0f7fa;
+    border-radius: 20px;
+    text-align: center;
+}
+
+
+ul {
+    list-style: none;
 }

@@ -28,17 +28,15 @@ function showForecast(forecast) {
     const forecastTime = forecast.list.filter(item => item.dt_txt.includes("15:00:00"));
     console.log(forecastTime)
     forecastTime.map(item => {
-        const day = new Date(item.dt_txt).toLocaleDateString("nl-NL", { weekday: "short" })
+        const day = new Date(item.dt_txt).toLocaleDateString("en-EN", { weekday: "short" })
         console.log(day)
 
         forecastDisplay.innerHTML += `
-            <ul class="forecast-list">
-                 <li>
-                    <span class="label">${day}</span>
-                    <span class="icon"></span>
-                    <span class="value">${forecast.temp}</span>
-                </li>
-            </ul>
+          <div class="day-card">
+                <span class="label">${day}</span>
+                <span class="icon">☀️</span>
+                <span class="value">23℃</span>
+           </div>
     `
     })
 
