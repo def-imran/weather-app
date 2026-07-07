@@ -12,6 +12,7 @@ async function getData() {
 
         const data = await response.json();
         console.log(data)
+        showWeatherToday(data);
 
         const secondResponse = await fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&appid=68c1ed9eb4f2cd7999faef05b5d5b90f`)
         const forecast = await secondResponse.json();
@@ -23,10 +24,28 @@ async function getData() {
     }
 }
 
+function showWeatherToday(data){
+    const humidityEl = document.getElementById("humidity");
+    const humidityData = data.main.humidity
+    humidityEl.innerText = humidityData;
+
+    const seaLevelEl = document.getElementById("sea-level");
+    const seaLevelData = data.main.sea_level
+    seaLevelEl.innerText = seaLevelData;
+
+    const windEl = document.getElementById("wind");
+    const windData = data.wind.speed.toFixed(1)
+    windEl.innerText = windData;
+
+
+}
+
+
 function showForecast(forecast) {
     const forecastDisplay = document.getElementById("forecast-container");
     const forecastDataFiltert = forecast.list.filter(item => item.dt_txt.includes("15:00:00"));
-    console.log(forecastDataFiltert)
+    console.log(forecastDataFiltert);
+    forecastDisplay.innerHTML = ``;
     
     forecastDataFiltert.map(item => {
         const day = new Date(item.dt_txt).toLocaleDateString("en-EN", { weekday: "short" })
