@@ -101,6 +101,24 @@ main {
     padding: 20px;
 }
 
+.attribution {
+    align-self: center;
+    padding: 8px 12px;
+    border-radius: 999px;
+    background: rgba(0, 0, 0, 0.35);
+    color: #fff;
+    font-size: 12px;
+    line-height: 1.4;
+    text-align: center;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+.attribution a {
+    color: #fff;
+    font-weight: 700;
+}
+
 
 ul {
     list-style: none;
