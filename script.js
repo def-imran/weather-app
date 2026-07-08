@@ -14,6 +14,7 @@ async function getData() {
         console.log(data)
         showWeatherToday(data);
         showSunData(data);
+        showBackgroundImage(data);
 
         const secondResponse = await fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&appid=68c1ed9eb4f2cd7999faef05b5d5b90f`)
         const forecast = await secondResponse.json();
@@ -84,8 +85,22 @@ function showForecast(forecast) {
            </div>
     `
     })
+}
 
+function showBackgroundImage(data){
+    const weatherStatus = data.weather[0].main;
+    console.log(weatherStatus)
 
+    if (weatherStatus === "Clear"){
+        document.body.style.backgroundImage = "linear-gradient(rgba(0, 0, 0, 0.60), rgba(0, 0, 0, 0.60)), url('assets/sunny.jpg')";
+    }
 
+    else if (weatherStatus === "Clouds"){
+        document.body.style.backgroundImage = "linear-gradient(rgba(0, 0, 0, 0.60), rgba(0, 0, 0, 0.60)), url('assets/cloudy.jpg')";
+    }
+
+       else if (weatherStatus === "Rain"){
+        document.body.style.backgroundImage = "linear-gradient(rgba(0, 0, 0, 0.60), rgba(0, 0, 0, 0.60)), url('assets/rainy.jpg')";
+    }
 }
 

@@ -8,7 +8,6 @@ body {
     font-family: sans-serif;
     padding: 20px;
     min-height: 100vh;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url('assets/cloudy.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -55,13 +54,18 @@ main {
 
 
 .weather-card-today {
-    background-color: aquamarine;
+    background-color: rgb(13, 136, 155);
     padding: 70px;
     max-width: 230px;
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-top: 0;
+}
+
+.titel-info{
+    margin-top: 35px;
+    color:white;
 }
 
 .forecast-card {
