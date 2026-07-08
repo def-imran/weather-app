@@ -102,16 +102,27 @@ main {
 }
 
 .attribution {
-    align-self: center;
-    padding: 8px 12px;
-    border-radius: 999px;
-    background: rgba(0, 0, 0, 0.35);
-    color: #fff;
+    color: rgba(255, 255, 255, 0.92);
     font-size: 12px;
     line-height: 1.4;
-    text-align: center;
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
+    text-align: left;
+}
+
+.attributions {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 20px;
+    align-self: flex-start;
+    width: 100%;
+    padding: 16px 0 4px;
+    margin-left: 0 auto;
+}
+
+.attribution {
+    flex: 0 1 auto;
 }
 
 .attribution a {
