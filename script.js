@@ -1,9 +1,8 @@
-const cityInput = document.getElementById("city-search");
+const citySearch = document.getElementById("city-search");
 const searchButton = document.getElementById("search-button");
 
-async function getData() {
+async function getData(city) {
 
-    const city = cityInput.value.toLowerCase();
     try {
         const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=68c1ed9eb4f2cd7999faef05b5d5b90f`)
         if (!response.ok) {
@@ -12,19 +11,54 @@ async function getData() {
 
         const data = await response.json();
         console.log(data)
+        if (city) {
+
+        }
         showWeatherToday(data);
         showSunData(data);
         showBackgroundImage(data);
 
+
         const secondResponse = await fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&appid=68c1ed9eb4f2cd7999faef05b5d5b90f`)
         const forecast = await secondResponse.json();
-        showForecast(forecast)
+        showForecast(forecast);
     }
 
     catch (error) {
         console.log(error)
     }
 }
+
+window.addEventListener("DOMContentLoaded", async (getLocation) => {
+    try {
+        const response = await fetch("http://ip-api.com/json/")
+        if (!response.ok) {
+            throw new Error("Could not get location")
+        }
+
+        const locationData = await response.json();
+        const location = locationData.city;
+        getData(location)
+        console.log(location)
+    }
+
+    catch (error) {
+        console.log(error)
+    }
+
+})
+
+
+
+function cityInput(){
+     const cityInput = citySearch.value.toLowerCase().trim();
+
+    if (cityInput){
+        getData(cityInput);
+    }
+
+}
+
 
 function showWeatherToday(data) {
     const humidityEl = document.getElementById("humidity");
@@ -87,19 +121,19 @@ function showForecast(forecast) {
     })
 }
 
-function showBackgroundImage(data){
+function showBackgroundImage(data) {
     const weatherStatus = data.weather[0].main;
     console.log(weatherStatus)
 
-    if (weatherStatus === "Clear"){
+    if (weatherStatus === "Clear") {
         document.body.style.backgroundImage = "linear-gradient(rgba(0, 0, 0, 0.60), rgba(0, 0, 0, 0.60)), url('assets/sunny.jpg')";
     }
 
-    else if (weatherStatus === "Clouds"){
+    else if (weatherStatus === "Clouds") {
         document.body.style.backgroundImage = "linear-gradient(rgba(0, 0, 0, 0.60), rgba(0, 0, 0, 0.60)), url('assets/cloudy.jpg')";
     }
 
-       else if (weatherStatus === "Rain"){
+    else if (weatherStatus === "Rain") {
         document.body.style.backgroundImage = "linear-gradient(rgba(0, 0, 0, 0.60), rgba(0, 0, 0, 0.60)), url('assets/rainy.jpg')";
     }
 }
