@@ -64,7 +64,21 @@ function showWeatherToday(data) {
     const cityNameSpan = document.getElementById("city-name");
     const cityName = data.name;
     cityNameSpan.innerText = cityName;
-    
+
+    const weatherDescripSpan = document.getElementById("weather-descrip");
+    const weatherDescrip = data.weather[0].main;
+    if (weatherDescrip === "Clear"){
+        weatherDescripSpan.innerText = " sunny ";
+    }
+
+    else if (weatherDescrip === "Clouds"){
+        weatherDescripSpan.innerText = " cloudy ";
+    }
+
+      else if (weatherDescrip === "Rain"){
+        weatherDescripSpan.innerText = " rainy "
+    }
+
     const humidityEl = document.getElementById("humidity");
     const humidityData = data.main.humidity
     humidityEl.innerText = humidityData;
