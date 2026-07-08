@@ -61,6 +61,10 @@ function cityInput(){
 
 
 function showWeatherToday(data) {
+    const cityNameSpan = document.getElementById("city-name");
+    const cityName = data.name;
+    cityNameSpan.innerText = cityName;
+    
     const humidityEl = document.getElementById("humidity");
     const humidityData = data.main.humidity
     humidityEl.innerText = humidityData;
