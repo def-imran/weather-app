@@ -31,7 +31,7 @@ async function getData(city) {
 
 window.addEventListener("DOMContentLoaded", async (getLocation) => {
     try {
-        const response = await fetch("http://ip-api.com/json/")
+        const response = await fetch("https://ip-api.com/json/")
         if (!response.ok) {
             throw new Error("Could not get location")
         }
@@ -72,7 +72,7 @@ function showWeatherToday(data) {
     const feelTempToday = Math.round(data.main.feels_like);
 
     degreeTodaySpan.innerText = degreeToday;
-    iconTodaySpan.src = `http://openweathermap.org/img/w/${iconToday}.png`;
+    iconTodaySpan.src = `https://openweathermap.org/img/w/${iconToday}.png`;
     weatherDescripTodaySpan.innerText = weatherDescripToday;
     feelTempTodaySpan.innerText = feelTempToday;
 
