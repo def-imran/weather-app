@@ -11,7 +11,7 @@ async function getData(city) {
 
         const data = await response.json();
         console.log(data)
-        
+
         showWeatherToday(data);
         showSunData(data);
         showBackgroundImage(data);
@@ -35,7 +35,7 @@ window.addEventListener("DOMContentLoaded", async (getLocation) => {
         }
 
         const locationData = await response.json();
-        const location = locationData.capital;
+        const location = locationData.cityName;
         getData(location)
         console.log(location)
     }
