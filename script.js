@@ -31,13 +31,13 @@ async function getData(city) {
 
 window.addEventListener("DOMContentLoaded", async (getLocation) => {
     try {
-        const response = await fetch("https://ip-api.com/json/")
+        const response = await fetch("https://free.freeipapi.com/api/json")
         if (!response.ok) {
             throw new Error("Could not get location")
         }
 
         const locationData = await response.json();
-        const location = locationData.city;
+        const location = locationData.capital;
         getData(location)
         console.log(location)
     }
