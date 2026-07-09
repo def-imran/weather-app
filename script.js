@@ -143,7 +143,7 @@ function showForecast(forecast) {
         console.log(forecastTemps)
 
         const forecastIcon = item.weather[0].icon
-        const iconurl = `http://openweathermap.org/img/w/${forecastIcon}.png`;
+        const iconurl = `https://openweathermap.org/img/w/${forecastIcon}.png`;
         console.log(forecastIcon)
 
         forecastDisplay.innerHTML += `
