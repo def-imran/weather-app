@@ -31,4 +31,5 @@ Instead of blind copy-pasting, I deliberately used AI to:
 - **CSS3** — Card-based layout, responsive behavior, and visual styling.
 - **OpenWeather API** — Current weather and 5-day forecast data.
 - **IP-API** — Initial location-based city detection.
+
 📄 License This project is open-source and free to use for educational purposes.
