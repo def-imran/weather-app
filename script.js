@@ -50,10 +50,10 @@ window.addEventListener("DOMContentLoaded", async (getLocation) => {
 
 
 
-function cityInput(){
-     const cityInput = citySearch.value.toLowerCase().trim();
+function cityInput() {
+    const cityInput = citySearch.value.toLowerCase().trim();
 
-    if (cityInput){
+    if (cityInput) {
         getData(cityInput);
     }
 
@@ -61,21 +61,38 @@ function cityInput(){
 
 
 function showWeatherToday(data) {
+    const degreeTodaySpan = document.getElementById("degree");
+    const iconTodaySpan = document.getElementById("descrip-icon");
+    const weatherDescripTodaySpan = document.getElementById("weather-descrip-today");
+    const feelTempTodaySpan = document.getElementById("feel-temp");
+
+    const degreeToday = Math.round(data.main.temp);
+    const iconToday = data.weather[0].icon;
+    const weatherDescripToday = data.weather[0].main
+    const feelTempToday = Math.round(data.main.feels_like);
+
+    degreeTodaySpan.innerText = degreeToday;
+    iconTodaySpan.src = `http://openweathermap.org/img/w/${iconToday}.png`;
+    weatherDescripTodaySpan.innerText = weatherDescripToday;
+    feelTempTodaySpan.innerText = feelTempToday;
+
+
+
     const cityNameSpan = document.getElementById("city-name");
     const cityName = data.name;
     cityNameSpan.innerText = cityName;
 
     const weatherDescripSpan = document.getElementById("weather-descrip");
     const weatherDescrip = data.weather[0].main;
-    if (weatherDescrip === "Clear"){
+    if (weatherDescrip === "Clear") {
         weatherDescripSpan.innerText = " sunny ";
     }
 
-    else if (weatherDescrip === "Clouds"){
+    else if (weatherDescrip === "Clouds") {
         weatherDescripSpan.innerText = " cloudy ";
     }
 
-      else if (weatherDescrip === "Rain"){
+    else if (weatherDescrip === "Rain") {
         weatherDescripSpan.innerText = " rainy "
     }
 
