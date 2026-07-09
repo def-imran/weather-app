@@ -161,15 +161,15 @@ function showBackgroundImage(data) {
     console.log(weatherStatus)
 
     if (weatherStatus === "Clear") {
-        document.body.style.backgroundImage = "linear-gradient(rgba(0, 0, 0, 0.60), rgba(0, 0, 0, 0.60)), url('assets/sunny.jpg')";
+        document.body.style.backgroundImage = "linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.60)), url('assets/sunny.jpg')";
     }
 
     else if (weatherStatus === "Clouds") {
-        document.body.style.backgroundImage = "linear-gradient(rgba(0, 0, 0, 0.60), rgba(0, 0, 0, 0.60)), url('assets/cloudy.jpg')";
+        document.body.style.backgroundImage = "linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.60)), url('assets/cloudy.jpg')";
     }
 
     else if (weatherStatus === "Rain") {
-        document.body.style.backgroundImage = "linear-gradient(rgba(0, 0, 0, 0.60), rgba(0, 0, 0, 0.60)), url('assets/rainy.jpg')";
+        document.body.style.backgroundImage = "linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.60)), url('assets/rainy.jpg')";
     }
 }
 

@@ -205,3 +205,28 @@ main {
 ul {
     list-style: none;
 }
+
+@media (max-width:500px) {
+
+    .top-div {
+        flex-direction: column;
+    }
+
+    body{
+        width:100%;
+        
+    }
+
+    .forecast-card{
+        max-width: 400px;
+        overflow-x: auto;
+    }
+    .bottom-div{
+        flex-wrap: wrap;
+    }
+    .weather-card-details{
+        flex-basis:100%;
+    }
+
+
+}
