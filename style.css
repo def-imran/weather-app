@@ -55,7 +55,7 @@ main {
 
 .weather-card-today {
     background-color: rgb(13, 136, 155);
-    padding: 30px 80px 70px 20px;
+    padding: 30px 20px 70px 20px;
     max-width: 230px;
     display: flex;
     flex-direction: column;
@@ -65,27 +65,58 @@ main {
 }
 
 .weather-card-today h2 {
-    color:white;
+    color: white;
     margin-bottom: 18px;
- 
+
 }
 
-.details-list{
+.details-list {
     display: flex;
     flex-direction: column;
     gap: 5px;
+    width: 100%;
 }
 
-.value-today, .icon-today, .label-today{
+/* generated with AI */
+.details-list li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: nowrap;
+    width: 100%;
+}
+
+/* generated with AI */
+.details-list li img {
+    display: block;
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+    margin-left: 0 auto;
+}
+
+.details-list li .label-today {
+    white-space: nowrap;
+}
+
+.details-list li .value-today,
+.details-list li .icon-today {
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.value-today,
+.icon-today,
+.label-today {
     color: white;
     font-size: 20px;
 }
 
 
 
-.titel-info{
+.titel-info {
     margin-top: 35px;
-    color:white;
+    color: white;
 }
 
 .forecast-card {
@@ -119,7 +150,7 @@ main {
     text-align: center;
     display: flex;
     flex-direction: column;
-    gap:8px;
+    gap: 8px;
 }
 
 
@@ -127,14 +158,14 @@ main {
     padding: 20px;
 }
 
-.search{
-    padding:5px;
+.search {
+    padding: 5px;
     border: none;
     border-radius: 5px;
 }
 
-.search-button{
-    padding:7px;
+.search-button {
+    padding: 7px;
     border-radius: 8px;
     color: white;
     background-color: rgb(13, 136, 155);
