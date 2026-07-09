@@ -11,9 +11,7 @@ async function getData(city) {
 
         const data = await response.json();
         console.log(data)
-        if (city) {
-
-        }
+        
         showWeatherToday(data);
         showSunData(data);
         showBackgroundImage(data);
